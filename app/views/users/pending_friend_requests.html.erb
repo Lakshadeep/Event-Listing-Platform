@@ -1,0 +1,46 @@
+<%= javascript_include_tag "ajax_scripts" %>
+
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+
+    <div class="page-header">
+      <h3>Pending friend requests</h3>
+    </div> 
+   
+    <% if @pending_requests.length != 0 %>
+      <div class="list-group">
+
+        <ul class="media-list">
+          <% @pending_requests.each do |x| %>
+
+
+             
+              <div class="col-sm-6 col-md-4">
+
+                <div class="thumbnail">
+                  <img src=<%= x.profile_pic.url(:thumb) %> class="pull-left" style="padding-right:15px;width: 90px; height: 75px">
+                  <div class="caption" class="pull-right" >
+                    <h4 class="media-heading"><a href="/user/info/?user_id=<%= x.id %>"><%= x.name %></a></h4>
+                    <button type="submit" class="btn btn-success"  onclick="accept_request(<%= x.id %>,<%= current_user.id %>)" id="accept_request<%= x.id %>">Accept</button>
+                    <button class="btn btn-danger"  onclick="reject_request(<%= x.id %>,<%= current_user.id %>)" id="reject_request<%= x.id %>">Reject</button>
+                  </div>
+                </div>
+
+              </div>
+     
+          <% end %>
+        </ul>
+ 
+    <% else %>
+      <div class="panel-body">
+        <h5 class="list-group-item-heading">No pending friend requests</h5>
+      </div>
+    <% end %>
+    
+ 
+  </div>
+</div>    
+
+
+
+
+</div>

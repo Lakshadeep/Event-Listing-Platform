@@ -1,0 +1,42 @@
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#text" data-toggle="tab">Invite your friends</a></li>
+  <li><a href="#category" data-toggle="tab">Invite people like you</a></li>
+</ul>
+
+<section class="tab-content">
+  <div class="tab-pane active" id="text" style="padding-top:20px;padding-bottom:10px">
+    <form role="form" action="/event/invite_result/" method="post">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10">
+          <div class="form-group">
+            <input type="text" class="form-control" name="search_key" required="true">
+            <input type="hidden" class="form-control" name="search_type" required="true" value="text">
+            <input type="hidden" class="form-control" name="event_id" required="true" value="<%= @event_id %>">
+          </div>  
+        </div>
+        <div class="col-xs-2 col-sm-2">
+          <button type="submit" class="btn btn-primary" name="search">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="tab-pane" id="category" style="padding-top:20px;padding-bottom:10px">
+   
+    <form role="form" action="/event/invite_result/" method="post">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10">
+          <div class="form-group">
+            <input type="text" class="form-control" name="search_key" required="true">
+            <input type="hidden" class="form-control" name="search_type" required="true" value="interest">
+            <input type="hidden" class="form-control" name="event_id" required="true" value="<%= @event_id %>">
+          </div>  
+        </div>
+        <div class="col-xs-2 col-sm-2">
+          <button type="submit" class="btn btn-primary" name="search">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

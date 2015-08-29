@@ -1,0 +1,100 @@
+<%= javascript_include_tag "dropzone" %>
+<%= stylesheet_link_tag "dropzone" %>
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  
+  <h2 > Event dashboard </h2> <br/>
+
+  <div class="panel panel-info" >
+    <div class="panel-heading">Event information</div>
+    <div class="panel-body">
+      <h4><%= @event.title %></h4>            
+      <table class="table ">
+        <tbody>
+          <tr>
+            <td>Address:</td>
+            <td><%= @event.address %></td>
+          </tr>
+          <tr>
+            <td>Cost per person:</td>
+            <td><%= @event.price %></td>   
+          </tr>
+          <tr>
+            <td>Starting on:</td>
+            <td><%= @event.start_time.to_formatted_s(:long_ordinal)  %></td>
+          </tr>
+          <tr>
+            <td>Ending on:</td>
+            <td><%= @event.end_time.to_formatted_s(:long_ordinal) %></td>
+          </tr>
+          <tr>
+            <td>Admin approval:</td>
+            <td><%= @event.is_approved ? "Approved":"Pending" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel panel-info" >
+    <div class="panel-heading">Attendee stats</div>
+  
+    <table class="table" style="padding-top:20px">
+      <tbody>
+        <tr>
+          <td><a href="/public/attendee_list/?event_id=<%= @event.id %>&status_code=1">Confirmed <span class="badge"> <%= @confirmed_count %></span></a></td>
+          <td><a href="/public/attendee_list/?event_id=<%= @event.id %>&status_code=2">Maybe <span class="badge"> <%= @maybe_count %></span></a></td>
+          <td><a href="/public/attendee_list/?event_id=<%= @event.id %>&status_code=3">Not coming <span class="badge"> <%= @rejected_count %></span></a></td>
+        </tr>
+      </tbody>
+    </table>
+ 
+  </div> 
+
+  <div class="panel panel-info" >
+    <div class="panel-heading">Event photos</div>
+    <div class="panel-body">
+      <div class="row">
+        <% if @events_pics.nil?  %>
+          <% @event_pics.each do |x| %>
+          <div class="col-sm-3" style="padding-top:10px">
+            <img src=<%= x.event_pic.url %> class="img-rounded" alt="No image available" width="220" height="180">
+          </div>
+          <% end %>           
+          <% else %>
+          <div class="col-sm-12">
+            <p>Currently this event has no photos</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-info" >
+    <div class="panel-heading">Add new photos</div>
+    <div class="panel-body">
+      <form action="/event/add_photo/" class="dropzone" id="photo">
+        <input type="hidden" class="form-control" name="event_id" required="true" value=<%= params[:event_id] %>>
+      </form>
+    </div>
+    
+  </div>
+
+
+  <div class="panel panel-info" >
+    <div class="panel-heading">Invite users to your event</div>
+    <div class="panel-body">
+      <button type="submit" class="btn btn-primary" onclick="location.href = '/event/invite_search/?event_id=<%= @event.id %>';">Invite others</button>
+    </div>
+  </div>
+
+</div>    
+
+<script>
+
+
+</script>
+
+

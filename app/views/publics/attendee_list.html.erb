@@ -1,0 +1,18 @@
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+  <div class="panel panel-info">
+    <div class="panel-heading"><%= @status %></div>
+     
+    	<% @results.each do |x| %>
+      	<a href="/user/info/?user_id=<%= x.id %>" class="list-group-item ">
+        <h4 class="list-group-item-heading"><%= x.name %></h4>
+        </a>
+      <% end.empty? and begin %>
+        <div class="panel-body">
+          <h5 class="list-group-item-heading">No users with this status for this event</h5>
+        </div>  
+      <% end %>
+    
+    </div>
+    <p><a href="/event/info/?event_id=<%= @event.id %>" class="btn btn-default" role="button">Back to event</a> 
+  </div>
+</div>    

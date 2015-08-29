@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>EventApp</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= javascript_include_tag "jquery-1.11.3" %>
+    <%= javascript_include_tag "bootstrap.min" %>
+    <%= stylesheet_link_tag "application" %>
+  
+
+    
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">EventApp</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/user/profile/">Profile</a></li>
+            <li><a href="/event/new/">Create event</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/event/user_created/">View your events</a></li>
+                <li><a href="/user/search/">Search users</a></li>
+                <li><a href="/user/friend_requests/">Friend requests</a></li>
+                <li><a href="/user/friends_list/">Friends</a></li>
+                <li><a href="/user/event_invitations/">Event invitations</a></li>
+              </ul>
+            </li>  
+            <li><a href="/user/location/">Recommendations</a></li>
+
+
+            <li><a href="<%= destroy_user_session_path %>">Logout</a></li>
+
+          </ul>
+
+          <a class="navbar-brand navbar-right" href="/user/profile/"><%= current_user.name  %></a>
+          <a class="navbar-brand navbar-right" href="/user/profile/"><img src=<%= current_user.profile_pic.url(:thumb)  %> width="30" height="30"></a>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <%= yield %>
+
+  
+  </body>
+</html>

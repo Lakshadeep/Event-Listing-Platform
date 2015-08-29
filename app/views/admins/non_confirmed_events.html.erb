@@ -1,0 +1,31 @@
+<%= javascript_include_tag "ajax_scripts" %>
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+  <div class="panel panel-info">
+    <div class="panel-heading"> Confirm events</div>
+     
+
+    <% if @non_confirmed_events.length != 0 %>
+    <div class="list-group">
+
+      <% @non_confirmed_events.each do |x| %>
+        <a href="/event/user/?event_id=<%= x.id %>" class="list-group-item ">
+          <h4 class="list-group-item-heading"><%= x.title %></h4>
+          <p>Address: <%= x.address %> </p>
+          <p> From <%= x.start_time.to_formatted_s(:long_ordinal)  %> to <%= x.end_time.to_formatted_s(:long_ordinal)  %> </p>
+          <p>Cost per person: <%= x.price %></p>
+
+          <button type="submit" class="btn btn-success"  onclick="confirm_event(<%= x.id %>)" id="confirm<%= x.id %>">
+            Accept</button>
+          <button type="submit" class="btn btn-danger" onclick="delete_event(<%= x.id %>)" id="reject<%= x.id %>">Reject</button>
+          </a>            
+
+      <% end %>
+    </div>
+    <% else %>
+      <div class="panel-body"> 
+        <h4> No pending events for confirmation </h4>
+      </div>  
+    <% end %>
+  
+  </div>      
+</div>

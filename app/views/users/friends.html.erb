@@ -1,0 +1,21 @@
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+
+  <div class="page-header">
+    <h2>Your friends</h2>
+  </div> 
+  <div class="row">
+    <% @friends.each do |x| %>
+      
+        <div class="col-sm-4 col-md-3">
+          <div class="thumbnail" style="height:350px">
+            <div class="caption">
+              <img src=<%= x.profile_pic.url %> class="img-rounded" alt="No image available" width="240" height="220">
+              <h4><%= x.name %></h4>
+              <p><a href="/user/friends/?user_id=<%= x.id %>" class="btn btn-primary" role="button">View profile</a></p> 
+            </div>
+
+          </div>
+        </div>  
+    <% end %>
+    </div>
+</div>

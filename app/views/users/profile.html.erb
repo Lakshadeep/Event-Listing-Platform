@@ -1,0 +1,70 @@
+<div class="container" style="padding-top:100px;padding-bottom:10px">
+  <div class="row" style="padding-bottom:20px">
+    <div class="col-sm-3">
+      <img src=<%= current_user.profile_pic.url %> class="img-rounded" alt="" width="220" height="220">
+    </div>
+    <div class="col-sm-7">
+      <h1><%= current_user.name %></h1>
+  
+      <% current_user.tags.each do |x| %>
+        <span class="label label-info"><%= x.tag %></span>
+      <% end %>
+
+
+    </div>
+  </div>
+
+
+  <div class="panel panel-info" >
+    <div class="panel-heading">Your events</div>
+               
+    <% @events.each do |x| %>
+      <a href="/event/user/?event_id=<%= x.id %>" class="list-group-item ">
+        <h4 class="list-group-item-heading"><%= x.title %></h4>
+        <p class="list-group-item-text"><%= x.address %></p>
+      </a>
+    <% end.empty? and begin %>
+      <div class="panel-body">
+        <h5 class="list-group-item-heading">No events availabel</h5>
+      </div>
+    <% end %>
+
+  </div>
+
+
+  <div class="panel panel-info">
+    <div class="panel-heading">Events you are attending</div>
+    
+    <% @attending_events.each do |x| %>
+      <a href="/event/user/?event_id=<%= x[0].id %>" class="list-group-item ">
+      <h4 class="list-group-item-heading"><%= x[0].title %></h4>
+      <p class="list-group-item-text"><%= x[0].address %></p>
+      </a>
+    <% end.empty? and begin %>
+      <div class="panel-body">
+        <h5 class="list-group-item-heading">No events availabel</h5>
+      </div>
+    <% end %>
+ 
+  </div>
+
+
+  <div class="panel panel-info">
+    <div class="panel-heading">Invited for events</div>
+
+    <% @invited_for_events.each do |x| %>
+      <a href="/event/user/?event_id=<%= x[0].id %>" class="list-group-item ">
+        <h4 class="list-group-item-heading"><%= x[0].title %></h4>
+        <p class="list-group-item-text"><%= x[0].address %></p>
+      </a>
+    <% end.empty? and begin %>
+      <div class="panel-body">
+        <h5 class="list-group-item-heading">No events availabel</h5>
+      </div>  
+    <% end %>
+
+  </div>
+
+
+</div>
+

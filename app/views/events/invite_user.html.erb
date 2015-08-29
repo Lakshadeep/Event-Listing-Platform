@@ -1,0 +1,28 @@
+<%= javascript_include_tag "ajax_scripts" %>
+<div class="container" style="padding-top:100px;padding-bottom:10px">
+  <div class="row">
+   <div class="col-sm-3">
+    <img src=<%= @user.profile_pic.url %> class="img-rounded" alt="" width="240" height="220">
+  </div>
+  <div class="col-sm-7">
+    <h1><%= @user.name %></h1>
+
+    <% @user.tags.each do |x| %>
+      <span class="label label-info"><%= x.tag %></span>
+    <% end %>
+     <div class="row" style="padding-top:20px;padding-left:15px"> 
+      <% if @user.id != current_user.id %>
+        <% if @event_user_status == "no_data" %>
+          <button type="submit" class="btn btn-primary" onclick="send_invite(<%= @event.id %>, <%= @user.id %>)" id="send_invite">Send invitation</button>
+        <% elsif @event_user_status == "invitation_sent" %>
+          <h3><span class="label label-default">User has been already invited for this event</span></h3>
+        <% elsif @event_user_status == "invitation_pending" %>
+          <h3><span class="label label-default">User has been already invited for this event</span></h3>
+        <% elsif @event_user_status == "confirmed" %>
+          <h3><span class="label label-default">User is attending this event</span></h3>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

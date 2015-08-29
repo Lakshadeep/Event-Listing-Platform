@@ -1,0 +1,18 @@
+
+<%= javascript_include_tag "google_map" %>
+
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+  <%= render :partial => 'shared/search' %>
+
+  <%= render :partial => 'shared/event_result', :locals => {:event_heading => 'Recently Created Events',:events_list => @recently_created,:event_id=>0,:pagination => true, :param_name => "recently_created_events"} %>
+
+  <%= render :partial => 'shared/event_result', :locals => {:event_heading => 'Upcoming Events',:events_list => @upcoming,:event_id=>0,:pagination => true, :param_name => "upcoming_events"} %>
+
+</div>

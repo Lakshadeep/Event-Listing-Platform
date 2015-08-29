@@ -1,0 +1,35 @@
+ <div class="row">
+   <div class="page-header">
+    <h3><%= event_heading %></h3>
+   </div> 
+   
+   <% events_list.each do |x| %>
+   <% if event_id != x.id %>
+   
+   <div class="col-sm-6 col-md-4">
+    <div class="thumbnail" style="height:450px">
+      <img src=<%= x.first_pic_file_name.nil? ? "/images/original/missing.png" : x.first_pic.url(:medium) %> alt="..." style="width: 340px; height: 240px">
+      <div class="caption">
+        <h4><%= x.title %></h4>
+        <p><b>Address:</b><%= x.address%></p>
+        <p><b>Starts on:</b><%= x.start_time.to_formatted_s(:long_ordinal) %></p>
+        <p><b>Ends on:</b><%= x.end_time.to_formatted_s(:long_ordinal) %></p>
+
+        <p><a href="/event/info/?event_id=<%= x.id %>" class="btn btn-primary" role="button">View event</a> 
+        </div>
+      </div>
+    </div>
+    
+    <%  end  %>
+
+    <% end.empty? and begin %>
+    <div class="col-sm-12">
+      <p><%=   event_heading + " not available" %></p>
+    </div>
+    <% end %>
+  </div>
+
+
+  <%  if pagination %>
+  <%=  paginate events_list, :remote => true, :param_name => param_name %>
+  <% end %>

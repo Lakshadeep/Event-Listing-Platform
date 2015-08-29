@@ -1,0 +1,44 @@
+<div class="container" style="padding-top:100px;padding-bottom:60px;">
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+  <div class="page-header" style="text-align: center">
+    <h2 >Log in</h3>
+  </div>
+
+  <form accept-charset="UTF-8" action="/users/sign_in" class="form-horizontal" id="new_user" method="post">
+
+    <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" />
+      <input name="authenticity_token" type="hidden" value="KO5+BSQk2xSG/dgMsFzORmWrMoyushJkqlcxY+eeaGs=" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="user_email">Email</label>
+      <div class="col-sm-5">
+        <input autofocus="autofocus" id="user_email" name="user[email]" size="30" type="email" class="form-control"/>
+      </div>  
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="user_password">Password</label>
+      <div class="col-sm-5">
+        <input autocomplete="off" id="user_password" name="user[password]" size="30" type="password" class="form-control" />
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-8">
+        <input class="btn btn-large btn-primary"  name="commit" type="submit" value="Log in" />
+      </div>
+    </div>
+  </form>
+
+  
+
+</div>

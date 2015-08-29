@@ -1,0 +1,72 @@
+<div class="container" style="padding-top:100px;padding-bottom:10px">
+
+  <div class="row" style="padding-bottom:20px">
+    <div class="col-sm-3">
+      <img src=<%= @user.profile_pic.url %> class="img-rounded" alt="" width="240" height="220">
+    </div>
+    <div class="col-sm-7">
+      <h1><%= @user.name %></h1>
+     
+        <% @user.tags.each do |x| %>
+          <span class="label label-info"><%= x.tag %></span>
+        <% end %>
+ 
+       <div class="row" style="padding-top:10px;padding-left:15px"> 
+        <h3><span class="label label-default">Friends</span></h3>
+      </div>    
+    </div>
+  </div>
+
+
+  <div class="panel panel-info">
+    <div class="panel-heading">User created events</div>
+                   
+    <% @events.each do |x| %>
+      <a href="/event/user/?event_id=<%= x.id %>" class="list-group-item ">
+        <h4 class="list-group-item-heading"><%= x.title %></h4>
+        <p class="list-group-item-text"><%= x.address %></p>
+      </a>
+    <% end.empty? and begin %>
+      <div class="panel-body">
+        <h5 class="list-group-item-heading">No events available</h5>
+      </div>
+    <% end %>
+  
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">User attending events</div>
+ 
+    <% @attending_events.each do |x| %>
+      <a href="/event/user/?event_id=<%= x[0].id %>" class="list-group-item ">
+      <h4 class="list-group-item-heading"><%= x[0].title %></h4>
+      <p class="list-group-item-text"><%= x[0].address %></p>
+      </a>
+    <% end.empty? and begin %>
+      <div class="panel-body">
+        <h5 class="list-group-item-heading">No events available</h5>
+      </div>
+    <% end %>
+ 
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">Invited for events</div>
+
+    <% @invited_for_events.each do |x| %>
+      <a href="/event/user/?event_id=<%= x[0].id %>" class="list-group-item ">
+        <h4 class="list-group-item-heading"><%= x[0].title %></h4>
+        <p class="list-group-item-text"><%= x[0].address %></p>
+      </a>
+    <% end.empty? and begin %>
+      <div class="panel-body">
+        <h5 class="list-group-item-heading">No events available</h5>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+
+

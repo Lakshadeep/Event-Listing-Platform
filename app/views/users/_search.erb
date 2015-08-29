@@ -1,0 +1,128 @@
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#text" data-toggle="tab">Search by title</a></li>
+  <li><a href="#location" data-toggle="tab">Search by location</a></li>
+  <li><a href="#date" data-toggle="tab">Search by date</a></li>
+  <li><a href="#category" data-toggle="tab">Search by category</a></li>
+  <li><a href="#all" data-toggle="tab">Advanced search</a></li>
+</ul>
+
+<section class="tab-content">
+  <div class="tab-pane active" id="text" style="padding-top:20px;padding-bottom:10px">
+    <form role="form" action="/search/" method="post">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10">
+          <div class="form-group">
+            <input type="text" class="form-control" name="search_key" required="true">
+            <input type="hidden" class="form-control" name="search_type" required="true" value="text">
+          </div>  
+        </div>
+        <div class="col-xs-2 col-sm-2">
+          <button type="submit" class="btn btn-primary" name="search">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="tab-pane " id="location" style="padding-top:20px;padding-bottom:10px" >
+    <form role="form" action="/search/" method="post">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10">
+          <div class="form-group">
+            <input type="text" class="form-control" name="search_key" id="search_key" required="true" >
+            <input type="hidden" class="form-control" name="search_type" required="true" value="location">
+          </div>  
+        </div>
+        <div class="col-xs-2 col-sm-2">
+          <button type="submit" class="btn btn-primary" name="search">Search</button>
+        </div>
+      </div>
+    </form>
+      <div id="googleMap" style="width:420px;height:300px"></div>
+      <button class="btn btn-primary" onclick="loadScript1()">Load Map</button>
+    </div>
+
+  <div class="tab-pane" id="date" style="padding-top:20px;padding-bottom:10px">
+    <form role="form" action="/search/" method="post">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10">
+          <div class="form-group">
+            <input type="date" class="form-control" name="search_key" required="true">
+            <input type="hidden" class="form-control" name="search_type" required="true" value="date">
+          </div>  
+        </div>
+        <div class="col-xs-2 col-sm-2">
+          <button type="submit" class="btn btn-primary" name="search">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="tab-pane" id="category" style="padding-top:20px;padding-bottom:10px">
+    <form role="form" action="/search/" method="post">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10">
+          <div class="form-group">
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="1" > Music </label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="2" > Sports</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="3" > Dance</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="4" > Party</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="5" > Public</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="6" > Travel</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="7" > Health</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="8" > Technology</label>
+            <input type="hidden" class="form-control" name="search_type" required="true" value="tag">
+          </div>  
+        </div>
+        <div class="col-xs-2 col-sm-2">
+          <button type="submit" class="btn btn-primary" name="search">Search</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="tab-pane" id="all" style="padding-top:20px;padding-bottom:10px">
+    
+    <form role="form" action="/search/" method="post">
+      <div class="row">
+        <div class="col-xs-7 col-sm-7">
+          <div class="form-group">
+            <input type="text" class="form-control" name="search_key" placeholder="Enter search keyword">
+          </div> 
+          <div class="form-group">
+            <input type="text" class="form-control" name="lat_lng" id="lat_lng"  placeholder="Drag the marker to suitable location and click">
+
+          </div>
+            <div id="googleMap2" style="width:420px;height:300px"></div>
+          <button class="btn btn-primary" onclick="loadScript2()" type="button">Load Map</button>
+          
+           <div class="form-group">
+            <input type="date" class="form-control" name="date"  placeholder="Select date">
+          </div> 
+          
+          <div class="form-group">
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="1" > Music </label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="2" > Sports</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="3" > Dance</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="4" > Party</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="5" > Public</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="6" > Travel</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="7" > Health</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="8" > Technology</label>
+            <input type="hidden" class="form-control" name="search_type" required="true" value="all">
+          </div>  
+        </div>
+             
+        
+
+        <div class="col-xs-10 col-sm-10">
+          <button type="submit" class="btn btn-primary" name="search">Search</button>
+        </div>
+      </div>
+
+
+    </form>
+  
+
+  </div>
+</section>

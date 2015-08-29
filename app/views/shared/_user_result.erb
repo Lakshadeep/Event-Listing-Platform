@@ -1,0 +1,21 @@
+<div class="row">
+  <h3><%= heading %></h3>
+  <% if users_list.length != 0  %>
+    <% users_list.each do |x| %>
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail" style="height:350px">
+        <div class="caption">
+          <img src=<%= x.profile_pic.url %> class="img-rounded" alt="No image available" width="240" height="220">
+          <h4><%= x.name %></h4>
+          <p><a href="<%= url %>?user_id=<%= x.id %>" class="btn btn-primary" role="button">View profile</a></p> 
+       </div>
+
+      </div>
+    </div>  
+    <%  end  %>
+    <% else %>
+    <div class="col-sm-12">
+      <p> No results found </p>
+    </div>
+  <% end %>
+</div>

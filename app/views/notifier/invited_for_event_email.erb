@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    
+    <h4>Hello <%= @user.name %>  </h4>
+    <p>You have been invited to attend event <%= @event.title %></p>
+    <p>Follow below link to accept or reject invitation</p>
+    
+    <% if Rails.env.production? %>
+    <a href="http://lsnworld.in/user/event_invitations/">Link</a>
+    <% else %>
+    <a href="http://localhost:3000/user/event_invitations/">Link</a>
+    <% end %>
+
+  </body>
+</html>

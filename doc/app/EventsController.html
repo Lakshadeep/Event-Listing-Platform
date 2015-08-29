@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class EventsController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/events_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-accept_invitation">#accept_invitation</a>
+    
+    <li><a href="#method-i-attend_event">#attend_event</a>
+    
+    <li><a href="#method-i-create">#create</a>
+    
+    <li><a href="#method-i-event_console">#event_console</a>
+    
+    <li><a href="#method-i-event_user">#event_user</a>
+    
+    <li><a href="#method-i-invite">#invite</a>
+    
+    <li><a href="#method-i-invite_search">#invite_search</a>
+    
+    <li><a href="#method-i-invite_search_results">#invite_search_results</a>
+    
+    <li><a href="#method-i-invite_user">#invite_user</a>
+    
+    <li><a href="#method-i-invite_via_email">#invite_via_email</a>
+    
+    <li><a href="#method-i-maybe_invitation">#maybe_invitation</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-reject_invitation">#reject_invitation</a>
+    
+    <li><a href="#method-i-send_email_invitation">#send_email_invitation</a>
+    
+    <li><a href="#method-i-set_photo">#set_photo</a>
+    
+    <li><a href="#method-i-user_created_events">#user_created_events</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Ability.html">Ability</a>
+  
+    <li><a href="./AccessController.html">AccessController</a>
+  
+    <li><a href="./AccessHelper.html">AccessHelper</a>
+  
+    <li><a href="./AdminHelper.html">AdminHelper</a>
+  
+    <li><a href="./AdminsController.html">AdminsController</a>
+  
+    <li><a href="./AdminsHelper.html">AdminsHelper</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Attendee.html">Attendee</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventsController.html">EventsController</a>
+  
+    <li><a href="./EventsHelper.html">EventsHelper</a>
+  
+    <li><a href="./Friend.html">Friend</a>
+  
+    <li><a href="./Notifier.html">Notifier</a>
+  
+    <li><a href="./Photo.html">Photo</a>
+  
+    <li><a href="./PublicsController.html">PublicsController</a>
+  
+    <li><a href="./PublicsHelper.html">PublicsHelper</a>
+  
+    <li><a href="./RegistrationsController.html">RegistrationsController</a>
+  
+    <li><a href="./RegistrationsHelper.html">RegistrationsHelper</a>
+  
+    <li><a href="./Tag.html">Tag</a>
+  
+    <li><a href="./TagsController.html">TagsController</a>
+  
+    <li><a href="./TagsHelper.html">TagsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class EventsController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-accept_invitation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">accept_invitation</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="accept_invitation-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">accept_invitation</span>      <span class="ruby-comment">#allows user to accept the invitation sent by other users</span>
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event_id</span>)
+  <span class="ruby-identifier">check</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">accept_invitation</span>(<span class="ruby-identifier">current_user</span>,<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">check</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Success!&quot;</span>, <span class="ruby-value">:html</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;...insert html...&quot;</span> }
+  <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- accept_invitation-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- accept_invitation-method -->
+
+    
+      <div id="method-i-attend_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attend_event</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="attend_event-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attend_event</span>        <span class="ruby-comment">#allows user to attend event without any invitation</span>
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:user_id</span>]
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event_id</span>)
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">user_id</span>)
+  <span class="ruby-identifier">check</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">attend_event</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">check</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Success!&quot;</span>, <span class="ruby-value">:html</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;...insert html...&quot;</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attend_event-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attend_event-method -->
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>             <span class="ruby-comment">#called on submission of new event form</span>
+  <span class="ruby-identifier">event_hash</span> = {
+    <span class="ruby-string">&quot;title&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:title</span>],
+    <span class="ruby-string">&quot;latitude&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:latitude</span>],
+    <span class="ruby-string">&quot;longitude&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:longitude</span>],
+    <span class="ruby-string">&quot;address&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:address</span>],
+    <span class="ruby-string">&quot;price&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:cost</span>],
+    <span class="ruby-string">&quot;start_time&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:starttime</span>],
+    <span class="ruby-string">&quot;end_time&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:endtime</span>],
+    <span class="ruby-string">&quot;total_seats&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:seats</span>],
+    <span class="ruby-string">&quot;creator_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>
+  }
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">create_event</span>(<span class="ruby-identifier">event_hash</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;new&quot;</span>, <span class="ruby-value">:controller=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;events&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">category</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:category</span>]
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">category</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">true</span>  
+      <span class="ruby-identifier">category</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">t</span> = <span class="ruby-constant">Tag</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span>)
+        <span class="ruby-identifier">t</span>.<span class="ruby-identifier">events</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">id</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;You have successfully created an event&#39;</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;event_console&quot;</span>, <span class="ruby-value">:controller=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;events&quot;</span>,<span class="ruby-value">:event_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">id</span>)
+  <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-event_console" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">event_console</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="event_console-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">event_console</span>         <span class="ruby-comment">#displayed on creating a new event and is also availbel under </span>
+  <span class="ruby-ivar">@event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@event</span>.<span class="ruby-identifier">creator_id</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-string">&#39;You are not the owner of that event&#39;</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;index&quot;</span>, <span class="ruby-value">:controller=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;publics&quot;</span>)
+  <span class="ruby-keyword">else</span>  
+    <span class="ruby-ivar">@event_pics</span> = <span class="ruby-ivar">@event</span>.<span class="ruby-identifier">photos</span>
+    <span class="ruby-ivar">@confirmed_count</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">get_event_status_count</span>(<span class="ruby-ivar">@event</span>,<span class="ruby-string">&quot;confirmed&quot;</span>)
+    <span class="ruby-ivar">@maybe_count</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">get_event_status_count</span>(<span class="ruby-ivar">@event</span>,<span class="ruby-string">&quot;maybe&quot;</span>)
+    <span class="ruby-ivar">@rejected_count</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">get_event_status_count</span>(<span class="ruby-ivar">@event</span>,<span class="ruby-string">&quot;rejected&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- event_console-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- event_console-method -->
+
+    
+      <div id="method-i-event_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">event_user</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="event_user-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">event_user</span>            <span class="ruby-comment">#event info page availabel for logged in users</span>
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-ivar">@event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>])
+  <span class="ruby-ivar">@event_pics</span> = <span class="ruby-ivar">@event</span>.<span class="ruby-identifier">photos</span>
+  <span class="ruby-identifier">creator</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@event</span>.<span class="ruby-identifier">creator_id</span>)
+  <span class="ruby-ivar">@event_user_status</span> = <span class="ruby-ivar">@event</span>.<span class="ruby-identifier">event_user_status</span>(<span class="ruby-identifier">current_user</span>)
+
+  <span class="ruby-ivar">@confirmed_count</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">get_event_status_count</span>(<span class="ruby-ivar">@event</span>,<span class="ruby-string">&quot;confirmed&quot;</span>)
+  <span class="ruby-ivar">@maybe_count</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">get_event_status_count</span>(<span class="ruby-ivar">@event</span>,<span class="ruby-string">&quot;maybe&quot;</span>)
+  <span class="ruby-ivar">@rejected_count</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">get_event_status_count</span>(<span class="ruby-ivar">@event</span>,<span class="ruby-string">&quot;rejected&quot;</span>)
+  <span class="ruby-ivar">@nearby_events</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">get_location_based_event_list</span>(<span class="ruby-ivar">@event</span>.<span class="ruby-identifier">latitude</span>,<span class="ruby-ivar">@event</span>.<span class="ruby-identifier">longitude</span>,<span class="ruby-value">3</span>).<span class="ruby-identifier">page</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:nearby</span>]
+  <span class="ruby-ivar">@other_events_by_user</span> = <span class="ruby-identifier">creator</span>.<span class="ruby-identifier">get_user_created_events</span>().<span class="ruby-identifier">page</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:user_created</span>]
+  <span class="ruby-ivar">@similar_events</span> = <span class="ruby-constant">Kaminari</span>.<span class="ruby-identifier">paginate_array</span>(<span class="ruby-constant">Event</span>.<span class="ruby-identifier">get_similar_events</span>(<span class="ruby-ivar">@event</span>.<span class="ruby-identifier">tags</span>)).<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:similar</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- event_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- event_user-method -->
+
+    
+      <div id="method-i-invite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invite</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="invite-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invite</span>            <span class="ruby-comment">#send invitation to other user</span>
+  <span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:user_id</span>]
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event_id</span>)
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">user_id</span>)
+  <span class="ruby-identifier">invitor</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">check</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">send_invitations</span>(<span class="ruby-identifier">invitor</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">check</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Success!&quot;</span>, <span class="ruby-value">:html</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;...insert html...&quot;</span> }
+  <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invite-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invite-method -->
+
+    
+      <div id="method-i-invite_search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invite_search</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="invite_search-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invite_search</span>      <span class="ruby-comment">#availabel for event creating user under admin console before event is confirmed</span>
+                       <span class="ruby-comment">#by admin and on confirmation is availabel for any user on logged in event info page</span>
+  <span class="ruby-ivar">@event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invite_search-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invite_search-method -->
+
+    
+      <div id="method-i-invite_search_results" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invite_search_results</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="invite_search_results-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invite_search_results</span>    <span class="ruby-comment">#user can search and invite only his friends and people who share mutual interests</span>
+  <span class="ruby-identifier">search_key</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:search_key</span>]
+  <span class="ruby-identifier">search_type</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:search_type</span>]
+  <span class="ruby-ivar">@event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>)  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search_type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;text&#39;</span> 
+    <span class="ruby-ivar">@results</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">search_friends</span>(<span class="ruby-identifier">search_key</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">search_type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;interest&#39;</span>
+    <span class="ruby-ivar">@results</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">interest_based_search</span>(<span class="ruby-identifier">search_key</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invite_search_results-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invite_search_results-method -->
+
+    
+      <div id="method-i-invite_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invite_user</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="invite_user-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invite_user</span>       <span class="ruby-comment">#allows user to invite other users to event</span>
+  <span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:user_id</span>]
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-ivar">@event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event_id</span>)
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">user_id</span>)
+  <span class="ruby-ivar">@event_user_status</span> = <span class="ruby-ivar">@event</span>.<span class="ruby-identifier">event_user_status</span>(<span class="ruby-ivar">@user</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invite_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invite_user-method -->
+
+    
+      <div id="method-i-invite_via_email" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invite_via_email</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="invite_via_email-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invite_via_email</span>              <span class="ruby-comment">#asks the user invited via email to first sign up and then directs</span>
+  <span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>     <span class="ruby-comment">#to invitation accept/reject page</span>
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">user_id</span>)
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event_id</span>)
+  <span class="ruby-identifier">invitor_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:invitor_id</span>]
+  <span class="ruby-identifier">invitor</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">invitor_id</span>)
+  <span class="ruby-identifier">check</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">send_invitations</span>(<span class="ruby-identifier">invitor</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">check</span> 
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;pending_invitations&quot;</span>, <span class="ruby-value">:controller=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;users&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invite_via_email-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invite_via_email-method -->
+
+    
+      <div id="method-i-maybe_invitation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">maybe_invitation</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="maybe_invitation-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">maybe_invitation</span>      <span class="ruby-comment">#allows user to maybe the invitation sent by other users</span>
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event_id</span>)
+  <span class="ruby-identifier">check</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">maybe_invitation</span>(<span class="ruby-identifier">current_user</span>,<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">check</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Success!&quot;</span>, <span class="ruby-value">:html</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;...insert html...&quot;</span> }
+  <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- maybe_invitation-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- maybe_invitation-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>               <span class="ruby-comment">#create event form</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-reject_invitation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reject_invitation</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reject_invitation-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reject_invitation</span>     <span class="ruby-comment">#allows user to reject the invitation sent by other users</span>
+  <span class="ruby-identifier">event_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>]
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">event_id</span>)
+  <span class="ruby-identifier">check</span> = <span class="ruby-constant">Attendee</span>.<span class="ruby-identifier">reject_invitation</span>(<span class="ruby-identifier">current_user</span>,<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">check</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Success!&quot;</span>, <span class="ruby-value">:html</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;...insert html...&quot;</span> }
+  <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reject_invitation-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reject_invitation-method -->
+
+    
+      <div id="method-i-send_email_invitation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_email_invitation</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_email_invitation-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_email_invitation</span>      <span class="ruby-comment">#allows users to invite people to event using email </span>
+  <span class="ruby-identifier">email</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:email</span>]
+  <span class="ruby-identifier">invitor</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:invitor_id</span>])
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>])
+  <span class="ruby-constant">Notifier</span>.<span class="ruby-identifier">delay</span>.<span class="ruby-identifier">send_email_invitation</span>(<span class="ruby-identifier">event</span>,<span class="ruby-identifier">invitor</span>,<span class="ruby-identifier">email</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Email successfully sent&#39;</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;event_user&quot;</span>, <span class="ruby-value">:controller=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;events&quot;</span>,<span class="ruby-value">:event_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>])
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_email_invitation-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_email_invitation-method -->
+
+    
+      <div id="method-i-set_photo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_photo</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_photo-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_photo</span>             <span class="ruby-comment">#adds new photo to events, availabel in event console</span>
+  <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>])
+  
+
+  <span class="ruby-identifier">event_pic</span> = <span class="ruby-constant">Photo</span>.<span class="ruby-identifier">create</span>({<span class="ruby-identifier">event_pic</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:file</span>]})
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">photos</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">event</span>.<span class="ruby-identifier">first_pic</span> = <span class="ruby-identifier">event_pic</span>.<span class="ruby-identifier">event_pic</span>
+    <span class="ruby-identifier">event</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">event</span>.<span class="ruby-identifier">photos</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">event_pic</span>
+  
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Photo added successfully&#39;</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;event_console&quot;</span>, <span class="ruby-value">:controller=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;events&quot;</span>,<span class="ruby-value">:event_id=</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:event_id</span>].<span class="ruby-identifier">to_i</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_photo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_photo-method -->
+
+    
+      <div id="method-i-user_created_events" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_created_events</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="user_created_events-source">
+            <pre><span class="ruby-comment"># File app/controllers/events_controller.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_created_events</span>       <span class="ruby-comment">#displays the events created by the user</span>
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-ivar">@user_events</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">get_user_events</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_created_events-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_created_events-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,87 @@
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<%= javascript_include_tag "google_map" %>
+<%= stylesheet_link_tag "carousel" %>
+
+
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+  <div class="page-header">
+    <h1><%= @event.title %></h1>
+  </div>  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox" align="center">
+      <div class="item active">
+        <img src=<%= @event_pics.length == 0 ? "" : @event_pics[0].event_pic.url %> alt="">
+      </div>
+      <% @event_pics.length == 0 ? @event_pics : @event_pics.shift %>
+      <% @event_pics.each do |x| %>
+        <div class="item ">
+          <img src=<%= x.event_pic.url %> alt="">
+        </div>
+      <% end %>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="container" style="padding-top:10px;padding-bottom:10px">
+  <div class="row">
+    <h2><%= @event.title %></h2>
+    <p></p>
+    <div class="col-sm-4 col-md-6">            
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>Address:</td>
+            <td><%= @event.address %></td>
+         </tr>
+          <tr>
+            <td>Cost per person:</td>
+            <td><%= @event.price %></td>   
+          </tr>
+          <tr>
+            <td>Starting on</td>
+            <td><%= @event.start_time.to_formatted_s(:long_ordinal)  %></td>
+          </tr>
+           <tr>
+            <td>Ending on</td>
+            <td><%= @event.end_time.to_formatted_s(:long_ordinal) %></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td><a href="/public/attendee_list/?event_id=<%= @event.id %>&status_code=1">Confirmed <span class="badge"> <%= @confirmed_count %></span></a></td>
+            <td><a href="/public/attendee_list/?event_id=<%= @event.id %>&status_code=2">Maybe <span class="badge"> <%= @maybe_count %></span></a></td>
+            <td><a href="/public/attendee_list/?event_id=<%= @event.id %>&status_code=3">Not coming <span class="badge"> <%= @rejected_count %></span></a></td>
+         </tr>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-primary" onclick="location.href = '<%= new_user_session_path %>';" >Login to attend this event</button>
+
+      <button class="btn btn-default" onclick="show_map(<%= @event.latitude %>,<%= @event.longitude %>)">View Map</button>
+
+    </div>  
+    <div class="col-sm-4 col-md-6">
+      <div id="googleMap" style="width:420px;height:300px"></div>
+    </div>  
+  </div>
+</div>
+
+
+<div class="container" style="padding-top:10px;padding-bottom:10px">
+  <%= render :partial => 'shared/event_result', :locals => {:event_heading => 'Nearby Events',:events_list => @nearby_events,:event_id => @event.id,:pagination => true, :param_name => "nearby" } %>
+  <%= render :partial => 'shared/event_result', :locals => {:event_heading => 'Other Events Created by this User',:events_list => @other_events_by_user,:event_id => @event.id,:pagination => true, :param_name => "user_created"} %>
+  <%= render :partial => 'shared/event_result', :locals => {:event_heading => 'Similar events',:events_list => @similar_events,:event_id => @event.id,:pagination => true, :param_name => "similar"} %>
+</div>
+
+

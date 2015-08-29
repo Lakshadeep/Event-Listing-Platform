@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    
+    <p>New event <%= @event.title %> has been created. </p>
+    <p>Use the following link to review and confirm the event.</p>
+
+    <% if Rails.env.production? %>
+    <a href="http://lsnworld.in/admin/confirm_list/">Link</a>
+    <% else %>
+    <a href="http://localhost:3000/admin/confirm_list/">Link</a>
+    <% end %>
+
+  </body>
+</html>

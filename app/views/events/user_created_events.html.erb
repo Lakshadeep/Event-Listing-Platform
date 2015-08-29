@@ -1,0 +1,17 @@
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+	<div class="panel panel-primary">
+    <div class="panel-heading">Your events</div>
+    <div class="list-group">
+      <% @user_events.each do |x| %>
+
+      <a href="/event/console/?event_id=<%= x.id %>" class="list-group-item ">
+        <h4 class="list-group-item-heading"><%= x.title %></h4>
+        <p class="list-group-item-text"> <%= x.address %></p>
+      </a>
+      <% end.empty? and begin %>
+      <h5 class="list-group-item-heading">You do not have any upcoming any events</h5>
+      <% end %>
+    </div>
+  </div> 
+   
+</div>

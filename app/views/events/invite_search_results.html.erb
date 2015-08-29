@@ -1,0 +1,26 @@
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+  <%= render :partial => 'search_invite' %>
+
+  <div class="row">
+    <h3>Search results</h3>
+    <% if @results.length != 0  %>
+    <% @results.each do |x| %>
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail" style="height:350px">
+        <div class="caption">
+          <img src=<%= x.profile_pic.url %> class="img-rounded" alt="No image available" width="240" height="220">
+          <h4><%= x.name %></h4>
+          <p><a href="/event/invite_user/?event_id=<%= @event_id %>&user_id=<%= x.id %>" class="btn btn-primary" role="button">Invite</a></p> 
+        </div>
+        
+      </div>
+    </div>  
+    <%  end  %>
+    <% else %>
+    <div class="col-sm-12">
+      <p> No results found </p>
+    </div>
+    <% end %>
+  </div>
+
+</div>

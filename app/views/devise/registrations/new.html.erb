@@ -1,0 +1,80 @@
+<div class="container " style="padding-top:100px;padding-bottom:60px;align: center">
+  <% if !resource.errors.full_messages.empty? %>
+  <div class="alert alert-danger">
+  <h3>Errors</h3>
+  <% resource.errors.full_messages.each do |x| %>
+  <li><%= x %></li>
+  <% end %>
+  </div>
+  <% end %>
+
+  <div class="page-header col-sm-offset-1 ">
+    <h2>Create new account</h3>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'form-horizontal',:multipart => true}) do |f| %>
+
+   
+
+ 
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_email">Email</label>
+      <div class="col-sm-5">
+        <input autofocus="autofocus" class="form-control" id="user_email" name="user[email]" size="30" type="email" placeholder="Enter your email " value="<%= @user.nil? ? "" : @user.email %>"/>
+      </div>  
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_name">Name</label>
+      <div class="col-sm-5">
+        <input id="user_name" name="user[name]" size="30" type="text" class="form-control" placeholder="Enter your name " value="<%= @user.nil? ? "" : @user.name %>" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">Password</label>
+      <div class="col-sm-5">
+        <input autocomplete="off" id="user_password" name="user[password]" size="30" type="password" class="form-control" placeholder="password should be minimum 8 characters"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password_confirmation">Password confirmation</label>
+      <div class="col-sm-5">
+        <input autocomplete="off" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" class="form-control" placeholder="Retype your password"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_profile_pic">Profile pic</label>
+      <div class="col-sm-5">
+        <input id="user_profile_pic" name="user[profile_pic]" type="file" value="<%= @user.nil? ? "" : @user.profile_pic %>"/>
+      </div>  
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_Interests">Interests</label>
+      <div class="col-sm-8">
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="1" > Music </label>
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="2" > Sports</label>
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="3" > Dance</label>
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="4" > Party</label>
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="5" > Public</label>
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="6" > Travel</label>
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="7" > Health</label>
+        <label class="checkbox-inline"><input type="checkbox" name="category[]" value="8" > Technology </label>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+       <input class="btn btn-large btn-primary" name="commit" type="submit" value="Sign up" />
+      </div>
+    </div>
+
+  
+  <% end %>
+
+
+</div>

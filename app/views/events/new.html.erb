@@ -1,0 +1,108 @@
+<%= javascript_include_tag "event_create" %>
+
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+  <% if flash[:notice] %>
+  <div class="alert alert-danger">
+  <h3>Errors</h3>
+  <% flash[:notice].errors.full_messages.each do |x| %>
+  <li><%= x %></li>
+  <% end %>
+  </div>
+  <% end %>
+  <div class="page-header">
+    <h2>Create new event</h3>
+  </div>
+
+  <% temp = flash[:notice] %>
+
+  <div class="row" >
+    
+    <div class="col-sm-8">
+      <form class="form-horizontal" role="form" action="/event/create/" method="post" >
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="title">Title</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" name="title" placeholder="Event title" value="<%= temp ?  temp.title : "" %>">
+          </div>
+        </div>
+
+        
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="latitude">Latitude</label>
+          <div class="col-sm-7"> 
+            <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Drag and click marker on map" value="<%= temp ?  temp.latitude : "" %>"> 
+          </div>
+          
+
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="longitude">Longitude</label>
+          <div class="col-sm-7"> 
+            <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Drag and click marker on map" value="<%= temp ?  temp.longitude : "" %>">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="title">Map</label>
+          <div class="col-sm-7" id="mapbutton"> 
+            <button align="center" class="btn btn-default" onclick="loadScript()" type="button">Show Map</button>
+          </div> 
+          <div class="col-sm-7" style="display:none;" id="mapdisp">
+            <div id="googleMap" align="center" style="width:420px;height:300px"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="address">Address</label>
+          <div class="col-sm-7"> 
+            <input type="text" class="form-control" name="address" placeholder="Enter event address" value="<%= temp ?  temp.address : "" %>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="cost">Per head cost</label>
+          <div class="col-sm-7"> 
+            <input type="text" class="form-control" name="cost" placeholder="Enter 0 if free" value="<%= temp ?  temp.price : "" %>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="seats">No of seats</label>
+          <div class="col-sm-7"> 
+            <input type="text" class="form-control" name="seats" placeholder="Enter 0 if unlimited" value="<%= temp ?  temp.total_seats : "" %>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="starttime">Start time</label>
+          <div class="col-sm-7"> 
+            <input type="datetime-local" class="form-control" name="starttime" placeholder="Select start time" value="<%= temp ?  temp.start_time : "" %>" id="start_time">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="endtime">End time</label>
+          <div class="col-sm-7"> 
+            <input type="datetime-local" class="form-control" name="endtime" placeholder="Select end time" value="<%= temp ?  temp.end_time : "" %>">
+          </div>
+        </div>
+        <div class="form-group ">
+          <label class="control-label col-sm-2" for="category">Category</label>
+          <div class="col-sm-10">
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="1" > Music </label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="2" > Sports</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="3" > Dance</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="4" > Party</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="5" > Public</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="6" > Travel</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="7" > Health</label>
+            <label class="checkbox-inline"><input type="checkbox" name="category[]" value="8" > Technology </label>
+          </div>
+        </div>  
+
+        <div class="form-group"> 
+          <div class="col-sm-offset-2 col-sm-8">
+            <button type="submit" class="btn btn-primary">Create event</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

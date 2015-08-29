@@ -1,0 +1,4 @@
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+  <%= render :partial => 'shared/search_user' %>
+  <%= render :partial => 'shared/user_result', :locals => {:heading => 'Search Results',:users_list => @results,:url => '/user/info/'} %>
+</div>

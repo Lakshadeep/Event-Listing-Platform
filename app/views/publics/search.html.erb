@@ -1,0 +1,9 @@
+<%= javascript_include_tag "google_map" %>
+
+<div class="container" style="padding-top:100px;padding-bottom:60px">
+	<%= render :partial => 'shared/search' %>
+
+	<%= render :partial => 'shared/event_result', :locals => {:event_heading => @heading,:events_list => @results,:event_id=>0,:pagination => true, :param_name => "search_result"} %>
+
+</div>
+  

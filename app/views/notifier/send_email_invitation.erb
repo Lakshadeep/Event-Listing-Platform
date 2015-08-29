@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    
+    
+    <p>You have been invited to attend event <%= @event.title %> by <%= @invitor.name %> on EventApp</p>
+    <p>Follow the below link to accept or reject the invitation</p>
+    <% if Rails.env.production? %>
+    <a href="http://lsnworld.in/event/invite_email/?event_id=<%= @event.id %>&invitor_id=<%= @invitor.id %>">Link</a>
+    <% else %>
+    <a href="http://localhost:3000/event/invite_email/?event_id=<%= @event.id %>&invitor_id=<%= @invitor.id %>">Link</a>
+    <% end %>
+
+  </body>
+</html>

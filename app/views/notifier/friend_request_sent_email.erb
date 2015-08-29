@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    
+    <h4>Hello <%= @receiver.name %>  </h4>
+    <p><%= @sender.name %> wants to be your friend on EventApp</p>
+    <p>Visit the following link to accept/reject friend request </p>
+    <% if Rails.env.production? %>
+    <a href="http://lsnworld.in/user/friend_requests/"> Link </a>
+    <% else %>
+    <a href="http://localhost:3000/user/friend_requests/"> Link </a>
+    <% end %>
+
+  </body>
+</html>
